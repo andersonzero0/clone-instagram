@@ -1,83 +1,141 @@
 // VARIABLES - START
 const profile_img = document.getElementsByClassName("profile_img");
 const id_profileStories = document.getElementsByClassName("id_profileStories");
+
+const img_userPost = document.getElementsByClassName("img_userPost");
+const id_profileFeed = document.getElementsByClassName("id_profileFeed");
+const imgPost = document.getElementsByClassName("imgPost");
+const like_action = document.getElementsByClassName("like_action");
 // VARIABLES - END
 
 
 // FUNCTIONS - START
+function autoDataUser(id, name, valuePublications, valueFollowers,
+    valueFollowing, bio, link, fileImgPerfil) {
+    return {
+        id: id,
+        name: name,
+        valuePublications: valuePublications,
+        valueFollowers: valueFollowers,
+        valueFollowing: valueFollowing,
+        bio: bio,
+        link: link,
+        fileImgPerfil: fileImgPerfil
+    }
+}
 
+function autoDataPost(id, imgPost) {
+    return {
+        img_userPost: datasUsers[id].fileImgPerfil,
+        id_profileFeed: datasUsers[id].id,
+        imgPost: imgPost
+    }
+}
 // FUNCTIONS - END
 
 
 // DATAS - START
-const datas = [
-    {
-        id: "andersonzero0",
-        name: "Anderson Viana",
-        valuePublications: 1,
-        valueFollowers: 0,
-        valueFollowing: 0,
-        bio: "aaaaaaaaaa",
-        link: "a.com",
-        fileImgPerfil: "assets/images/andersonzero0_profile.png"
-    },
-    {
-        id: "david_john",
-        name: "David John",
-        valuePublications: 1,
-        valueFollowers: 0,
-        valueFollowing: 0,
-        bio: "",
-        link: "",
-        fileImgPerfil: "https://raw.githubusercontent.com/andersonzero0/javascript/main/carrossel/images/david-john.jpg"
-    },
-    {
-        id: "emily_taylor",
-        name: "Emily Taylor",
-        valuePublications: 1,
-        valueFollowers: 0,
-        valueFollowing: 0,
-        bio: "",
-        link: "",
-        fileImgPerfil: "https://raw.githubusercontent.com/andersonzero0/javascript/main/carrossel/images/emily-taylor.jpg"
-    },
-    {
-        id: "harry_jones",
-        name: "Harry Jones",
-        valuePublications: 1,
-        valueFollowers: 0,
-        valueFollowing: 0,
-        bio: "",
-        link: "",
-        fileImgPerfil: "https://raw.githubusercontent.com/andersonzero0/javascript/main/carrossel/images/harry-jones.jpg"
-    },
-    {
-        id: "oliver_smith",
-        name: "Oliver Smith",
-        valuePublications: 1,
-        valueFollowers: 0,
-        valueFollowing: 0,
-        bio: "",
-        link: "",
-        fileImgPerfil: "https://raw.githubusercontent.com/andersonzero0/javascript/main/carrossel/images/oliver-smith.jpg"
-    },
-    {
-        id: "olivia_williams",
-        name: "Olivia Williams",
-        valuePublications: 1,
-        valueFollowers: 0,
-        valueFollowing: 0,
-        bio: "",
-        link: "",
-        fileImgPerfil: "https://raw.githubusercontent.com/andersonzero0/javascript/main/carrossel/images/olivia-williams.jpg"
-    },
+const datasUsers = [
+    autoDataUser(
+        "andersonzero0",
+        "Anderson Viana",
+        1,
+        2,
+        2,
+        "16y",
+        "https://andersonzero0.github.com",
+        "assets/images/andersonzero0_profile.png"
+    ),
+
+    autoDataUser(
+        "david_john",
+        "David John",
+        1,
+        0,
+        0,
+        "--",
+        "--",
+        "https://raw.githubusercontent.com/andersonzero0/javascript/main/" + 
+        "carrossel/images/david-john.jpg"
+    ),
+
+    autoDataUser(
+        "emily_taylor",
+        "Emily Taylor",
+        1,
+        0,
+        0,
+        "--",
+        "--",
+        "https://raw.githubusercontent.com/andersonzero0/javascript/main/" + 
+        "carrossel/images/emily-taylor.jpg"
+    ),
+
+    autoDataUser(
+        "harry_jones",
+        "Harry Jones",
+        1,
+        0,
+        0,
+        "--",
+        "--",
+        "https://raw.githubusercontent.com/andersonzero0/javascript/main/" + 
+        "carrossel/images/harry-jones.jpg"
+    ),
+
+    autoDataUser(
+        "oliver_smith",
+        "Oliver Smith",
+        1,
+        0,
+        0,
+        "--",
+        "--",
+        "https://raw.githubusercontent.com/andersonzero0/javascript/main/" + 
+        "carrossel/images/oliver-smith.jpg"
+    ),
+
+    autoDataUser(
+        "olivia_williams",
+        "Olivia Williams",
+        1,
+        0,
+        0,
+        "--",
+        "--",
+        "https://raw.githubusercontent.com/andersonzero0/javascript/main/" + 
+        "carrossel/images/olivia-williams.jpg"
+    ),
 ]
+
+const datasPosts = [
+    autoDataPost(
+        3,
+        "post_1-0.jpg"
+    ),
+
+    autoDataPost(
+        4,
+        "post_2-0.jpg"
+    ),
+
+    autoDataPost(
+        2,
+        "post_3-0.jpg"
+    )
+];
 // DATAS - END
 
 
 // STAGE - START
-for(var i = 0; i < datas.length; i++) {
-    profile_img[i].src = datas[i].fileImgPerfil;
-    id_profileStories[i].innerHTML = datas[i].id;
+for(var i = 0; i < datasUsers.length; i++) {
+    profile_img[i].src = datasUsers[i].fileImgPerfil;
+    id_profileStories[i].innerHTML = datasUsers[i].id;
+}
+
+for(var i_post = 0; i_post < datasPosts.length; i_post++) {
+    img_userPost[i_post].src = datasPosts[i_post].img_userPost;
+    id_profileFeed[i_post].innerHTML = datasPosts[i_post].id_profileFeed;
+    imgPost[i_post].src = "assets/images/" + datasPosts[i_post].imgPost;
 }
 // STAGE - END
