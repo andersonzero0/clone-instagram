@@ -81,12 +81,7 @@ main {
 }
 
 ::-webkit-scrollbar {
-    background-color: white;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: lightgray;
-    border-radius: 10px;
+    display: none;
 }
 
 .conteiner_stories {
@@ -107,10 +102,9 @@ main {
 }
 
 .add_storiesIcon {
-    position: absolute;
+    position: relative;
     width: 15px;
-    top: 95px;
-    left: 55px;
+    right: 20px;
 }
 /* NAV STORIES - END*/
 
