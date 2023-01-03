@@ -31,6 +31,12 @@ function autoDataPost(id, imgPost) {
         imgPost: imgPost
     }
 }
+
+function eventLike(id) {
+    like_action[id].addEventListener("click", () => {
+        like_action[id].src = "/assets/images/heart_like.png";
+    })
+}
 // FUNCTIONS - END
 
 
@@ -137,5 +143,9 @@ for(var i_post = 0; i_post < datasPosts.length; i_post++) {
     img_userPost[i_post].src = datasPosts[i_post].img_userPost;
     id_profileFeed[i_post].innerHTML = datasPosts[i_post].id_profileFeed;
     imgPost[i_post].src = "assets/images/" + datasPosts[i_post].imgPost;
+}
+
+for(var i_like = 0; i_like < 3; i_like++) {
+    eventLike(i_like);
 }
 // STAGE - END

@@ -54,7 +54,7 @@
 }
 
 .conteiner_options > img {
-    width: 25px;
+    width: 30px;
 }
 
 .conteiner_options > img:nth-child(2) {
@@ -66,6 +66,7 @@
 
 main {
     padding-top: 50px;
+    padding-bottom: 40px;
 }
 
 .nav_stories {
@@ -171,7 +172,33 @@ main {
 }
 
 .icons_actionsFeed {
-    width: 20px;
+    width: 30px;
     z-index: 1;
 }
 /* FEED - END*/
+
+/*FOOTER - START*/
+.footer_main {
+    width: 100%;
+    background-color: white;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+}
+
+.actions_footer {
+    width: 30px;
+}
+
+.userFooter {
+    border: 2px solid grey;
+    border-radius: 50%;
+}
+/*FOOTER - END*/
