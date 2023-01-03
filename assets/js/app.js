@@ -34,7 +34,7 @@ function autoDataPost(id, imgPost) {
 
 function eventLike(id) {
     like_action[id].addEventListener("click", () => {
-        like_action[id].src = "/assets/images/heart_like.png";
+        like_action[id].src = "assets/images/heart_like.png";
     })
 }
 // FUNCTIONS - END
